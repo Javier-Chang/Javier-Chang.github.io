@@ -1,0 +1,342 @@
+:root {
+  --bg: #f5f5f7;
+  --text: #1d1d1f;
+  --sub: #86868b;
+  --primary: #0066cc;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --border: rgba(0, 0, 0, 0.08);
+  --radius: 24px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+
+/* 全域 Bento 工藝卡片 */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.02);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+  border-color: rgba(0, 102, 204, 0.2);
+}
+
+/* ==========================================================================
+   Professional Summary 視覺層次優化 (Apple Typographic Style)
+   ========================================================================== */
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* 讓段落之間自然產生 Apple 風格的呼吸感 */
+}
+
+/* 第一句：導言 (Lead Sentence) */
+.summary-lead {
+  font-size: 1.25rem;       /* 放大字級，變成第一個視覺焦點 */
+  font-weight: 600;         /* 稍微加粗，突顯學歷與核心角色 */
+  color: var(--text);       /* 使用最深的 Apple 黑色 */
+  line-height: 1.5;         /* 舒適的行高 */
+  letter-spacing: -0.01em;  /* 微調字距 */
+}
+
+/* 第二、三句：內文陳述 (Body Text) */
+.summary-body {
+  font-size: 1.05rem;       /* 標準好讀大小 */
+  font-weight: 400;         /* 常規字重 */
+  color: #424245;           /* 比純黑稍微淡一點點的進階深灰，拉開視覺層次 */
+  line-height: 1.6;         /* 內文行高拉開，極致好讀 */
+}
+
+/* Header 置中佈局 */
+.hero-bento {
+  width: 100%;
+  margin: 0;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  justify-content: center; 
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
+  text-align: center;       
+}
+
+.bento-main {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent; 
+  padding: 0;
+}
+
+.hero-left-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.profile-header { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.avatar { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
+h1 { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1.2; }
+.subtitle { color: var(--sub); font-size: 1.2rem; margin-top: 6px; font-weight: 500; }
+
+.social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 32px; }
+.social-links a { text-decoration: none; color: var(--text); background: var(--bg); padding: 10px 20px; border-radius: 24px; font-size: 0.9rem; font-weight: 600; transition: 0.25s; }
+.social-links a:hover { background: #e8e8ed; transform: scale(1.02); }
+.social-links .btn-download { background: var(--primary); color: white; }
+.social-links .btn-download:hover { background: #0077ed; }
+
+/* ==========================================================================
+   Apple 懸浮膠囊導航欄 (強力防字體隱形版)
+   ========================================================================== */
+.sticky-nav {
+  position: sticky;
+  top: 24px;
+  z-index: 100;
+  max-width: 780px; 
+  margin: 30px auto;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.85); 
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+
+.sticky-nav a { 
+  flex: 1; 
+  text-align: center; 
+  padding: 10px 12px; 
+  font-size: 0.88rem; 
+  color: var(--text) !important; /* 預設一律為清楚的灰黑字 */
+  text-decoration: none; 
+  font-weight: 600; 
+  border-radius: 24px; 
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+.sticky-nav a:hover { background: rgba(0, 0, 0, 0.03); }
+
+/* 核心防 bug 修正：只要被點亮亮起，文字強制洗成純白，並加上精緻投影 */
+.sticky-nav a.active { 
+  color: #ffffff !important; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); 
+}
+
+/* 各導航點高亮主題色背景鋪底 */
+.sticky-nav a.active.color-summary { background: #0066cc !important; }      
+.sticky-nav a.active.color-skills { background: #5e5ce6 !important; }        
+.sticky-nav a.active.color-projects { background: #30b0c7 !important; }      
+.sticky-nav a.active.color-experience { background: #ff9f0a !important; }  
+/* Education 是高亮淺藍色，字體獨立切回深黑，以免看不清 */
+.sticky-nav a.active.color-education { background: #64d2ff !important; color: #1d1d1f !important; }   
+.sticky-nav a.active.color-awards { background: #bf5af2 !important; }      
+.sticky-nav a.active.color-publications { background: #34c759 !important; }
+
+/* ─── 全新 Apple 官網商品櫥窗橫向跑馬燈滑動系統 ─── */
+.carousel-section-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 0 4px;
+}
+
+.carousel-section-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* 箭頭控制按鈕群 */
+.carousel-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.ctrl-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--text);
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  user-select: none;
+}
+.ctrl-btn:hover {
+  background: #e8e8ed;
+  transform: scale(1.05);
+}
+
+/* 滑動軌道視窗 */
+.carousel-track-container {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; 
+  padding: 10px 4px;
+}
+.carousel-track-container::-webkit-scrollbar {
+  display: none; 
+}
+
+.carousel-track {
+  display: inline-flex;
+  gap: 16px;
+}
+
+/* 縮小一半的精品櫥窗卡片 */
+.shrink-card {
+  flex: 0 0 280px; 
+  width: 280px;
+  min-height: 190px;
+  padding: 20px;
+  background: #ffffff;
+  white-space: normal; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.status-tag { font-size: 0.72rem; font-weight: 700; padding: 2px 6px; border-radius: 6px; }
+.status-tag.private { background: #f2f2f7; color: #8e8e93; }
+.status-tag.public { background: #e3f2fd; color: #0d47a1; }
+
+.tech-badge { font-size: 0.7rem; font-weight: 700; color: #ffffff; padding: 2px 6px; border-radius: 10px; }
+.tech-badge.vue { background: #42b883; }
+.tech-badge.css { background: #30b0c7; }
+.tech-badge.html { background: #e34c26; }
+.tech-badge.cpp { background: #5e5ce6; }
+.tech-badge.dart { background: #ff2d55; }
+.tech-badge.csharp { background: #178600; }
+.tech-badge.java { background: #b07219; }
+.tech-badge.python { background: #34c759; }
+.tech-badge.crypto { background: #3c3c3d; }
+
+.product-title { font-size: 1.15rem; font-weight: 700; color: var(--text); margin-bottom: 6px; letter-spacing: -0.02em; }
+.product-desc { font-size: 0.85rem; color: var(--sub); line-height: 1.4; margin-bottom: 12px; flex-grow: 1; }
+.product-footer { font-size: 0.78rem; font-weight: 600; color: #86868b; border-top: 1px solid var(--border); padding-top: 10px; }
+
+.project-link-btn { font-size: 0.78rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+.project-link-btn:hover { text-decoration: underline; }
+.product-card.public-interactive:hover { border-color: rgba(48, 176, 199, 0.4); }
+
+/* 主內容包裝與傳統區塊 */
+.content-wrapper { max-width: 1040px; margin: 0 auto; padding: 20px; }
+section { margin-bottom: 60px; scroll-margin-top: 110px; }
+.sec-title { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 28px; }
+
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.skill-box h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--primary); }
+.skill-box p { font-size: 0.95rem; color: var(--sub); line-height: 1.5; }
+
+.timeline { position: relative; padding-left: 24px; border-left: 2px solid #e8e8ed; }
+.tl-item { position: relative; margin-bottom: 32px; }
+.tl-meta { display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 8px; }
+.company { color: var(--primary); font-weight: 600; margin-bottom: 12px; }
+.journal-link {
+  display: inline-block;        /* 讓連結變成區塊，才能設定 margin */
+  margin-top: 12px;             /* 創造與上一行文字的距離 */
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: all 0.2s ease;
+}
+
+.journal-link:hover {
+  opacity: 0.7;
+  border-bottom-width: 2px;
+}
+
+.preview-details { margin-top: 12px; }
+.preview-details summary { font-size: 0.88rem; color: var(--primary); cursor: pointer; font-weight: 600; }
+.zoom-gallery { display: flex; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
+.zoom-gallery img { height: 100px; max-width: 100%; border-radius: 8px; border: 1px solid var(--border); object-fit: contain; cursor: zoom-in; transition: transform 0.2s; }
+.zoom-gallery img:hover { transform: scale(1.04); }
+
+.edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.awards-bento { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.award-block h3 { font-size: 1rem; font-weight: 700; }
+.award-block .meta { font-size: 0.8rem; color: var(--sub); margin-top: 4px; }
+.award-block.featured { grid-column: span 2; display: flex; flex-direction: column; justify-content: space-between; }
+
+.pub-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.pub-card .tag { background: #e8e8ed; color: var(--text); font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; display: inline-block; margin-bottom: 10px; }
+.pub-card.premium .tag { background: #00875a; color: white; }
+.pub-card h3 a { color: var(--text); text-decoration: none; }
+.pub-card h3 a:hover { color: var(--primary); }
+
+/* Lightbox & Button Top */
+.lightbox { position: fixed; inset: 0; background: rgba(255,255,255,0.9); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 200; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+.lightbox.active { opacity: 1; pointer-events: auto; }
+.lightbox img { max-width: 85%; max-height: 75vh; border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); transform: scale(0.95); transition: transform 0.3s ease; }
+.lightbox.active img { transform: scale(1); }
+
+.btn-top { position: fixed; bottom: 30px; right: 30px; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--border); background: white; cursor: pointer; box-shadow: 0 6px 16px rgba(0,0,0,0.06); opacity: 0; transition: 0.3s; z-index: 90; font-size: 1.2rem; }
+.btn-top.show { opacity: 1; }
+footer { text-align: center; padding: 60px 20px; color: var(--sub); font-size: 0.9rem; border-top: 1px solid var(--border); margin-top: 80px; }
+
+.summary-link {
+  color: var(--primary); /* 使用定義好的 --primary: #0066cc */
+  text-decoration: none; /* 去掉底線 */
+  font-weight: 600;     /* Apple 風格：稍微加粗，增加專業感 */
+  transition: opacity 0.2s ease;
+}
+
+.summary-link:hover {
+  opacity: 0.7;         /* 滑鼠懸停時微淡，增加互動回饋 */
+  text-decoration: underline; /* 懸停時出現底線，引導點擊 */
+}
+
+/* 手機響應式降級排版 */
+@media (max-width: 850px) {
+  .hero-bento { padding: 60px 16px; }
+  .bento-main { justify-content: center !important; padding: 0; }
+  .hero-left-wrapper { align-items: center !important; }
+  .profile-header { flex-direction: column !important; align-items: center !important; text-align: center; }
+  h1 { font-size: 2.0rem; }
+
+  /* Summary 手機端字級微調 */
+  .summary-lead { font-size: 1.15rem; }
+  .summary-body { font-size: 0.98rem; }
+
+  .sticky-nav { position: sticky !important; top: 12px !important; width: calc(100% - 32px); margin: 20px auto; padding: 6px; border-radius: 24px; overflow: hidden; }
+  .nav-container { justify-content: flex-start; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 6px; }
+  .nav-container::-webkit-scrollbar { display: none; }
+  .sticky-nav a { flex: 0 0 auto; padding: 8px 14px; font-size: 0.85rem; }
+
+  .shrink-card { flex: 0 0 250px; width: 250px; }
+  .edu-grid, .awards-bento, .timeline { grid-template-columns: 1fr; }
+  .award-block.featured { grid-column: span 1; }
+  .tl-meta { flex-direction: column; gap: 4px; }
+  .zoom-gallery img { height: 90px; max-width: 100%; }
+}

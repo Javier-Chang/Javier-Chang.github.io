@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Javier (Chung-Ling) Chang — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <img src="" alt="Zoomed" />
+    <p></p>
+  </div>
+
+  <button id="backToTop" class="btn-top" aria-label="Back to top">↑</button>
+
+  <header class="hero-bento">
+    <div class="bento-main">
+      <div class="hero-left-wrapper">
+        <div class="profile-header">
+          <img class="avatar" src="pictures/Javier_Profile_picture.jpg" alt="Javier Chang" />
+          <div class="profile-info">
+            <h1>Javier (Chung-Ling) Chang</h1>
+            <p class="subtitle">Full-Stack Engineer</p>
+          </div>
+        </div>
+        <nav class="social-links">
+          <a href="https://scholar.google.com/citations?user=FKWppmUAAAAJ" target="_blank">🎓 Scholar</a>
+          <a href="https://github.com/Shuo-Wen" target="_blank">💻 GitHub</a>
+          <a href="mailto:javierwork001@gmail.com">✉ Email</a>
+          <a href="files/CV_JavierChang_Resume.pdf" download class="btn-download" target="_blank">📥 Download CV</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sticky-nav">
+    <div class="nav-container">
+      <a href="#summary" class="active color-summary">Summary</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#awards">Awards</a>
+      <a href="#publications">Publications</a>
+    </div>
+  </nav>
+
+  <main class="content-wrapper">
+    
+	<section id="summary" class="card summary-card">
+      <h2 class="sec-title">Professional Summary</h2>
+      <p class="summary-lead">
+        NTU CSIE M.S. and Full-Stack Engineer with experience spanning hardware-software co-design and web development.
+      </p>
+      <p class="summary-body">
+        My background blends academic innovation—including a national award-winning, C-based intelligent escape system and an <a href="https://www.airitilibrary.com/Article/Detail/U0001-1209201810215800" target="_blank" class="summary-link">IEEE publication on Reinforcement Learning</a>—with solid professional experience.
+      </p>
+      <p class="summary-body">
+        I specialize in full-stack web systems (.NET/Vue) and system analysis (SA), translating complex workflows into efficient digital solutions.
+      </p>
+    </section>
+
+	<section id="skills">
+
+      <h2 class="sec-title">Core Expertise</h2>
+      <div class="skills-grid">
+        <!-- 區塊 1: Firmware -->
+        <div class="card skill-box">
+          <h3>Firmware Engineering</h3>
+          <p>C, Arduino, UART, Serial Protocols</p>
+        </div>
+        
+        <!-- 區塊 2: Backend Development -->
+        <div class="card skill-box">
+          <h3>Backend Development</h3>
+          <p>.NET (C# / .NET Core), PHP (Laravel), Python (Django), C</p>
+        </div>
+        
+        <!-- 區塊 3: Frontend & Mobile -->
+        <div class="card skill-box">
+          <h3>Frontend & Mobile</h3>
+          <p>Vue.js (RWD), Flutter, Android (Java), UWP</p>
+        </div>
+        
+        <!-- 區塊 4: Database & DevOps -->
+        <div class="card skill-box">
+          <h3>Database & DevOps</h3>
+          <p>MSSQL, MySQL, Enterprise Virtualization (vSphere / Horizon VDI)</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="projects">
+      <h2 class="sec-title">Projects Showcase</h2>
+      
+      <div class="carousel-section-wrapper" style="margin-top: 30px;">
+        <div class="carousel-section-header">
+          <span class="carousel-section-name">🌐 Public Repositories</span>
+          <div class="carousel-controls">
+            <button class="ctrl-btn prev" onclick="scrollCarousel('public-track', -1)">‹</button>
+            <button class="ctrl-btn next" onclick="scrollCarousel('public-track', 1)">›</button>
+          </div>
+        </div>
+        
+        <div class="carousel-track-container">
+          <div id="public-track" class="carousel-track">
+            
+            <div class="card product-card shrink-card public-interactive">
+              <div class="product-header">
+                <span class="status-tag public">Public Repo</span>
+                <span class="tech-badge html">HTML</span>
+              </div>
+              <h3 class="product-title">meetravel</h3>
+              <p class="product-desc">Interactive open web framework designed for social travel coordination and responsive UI.</p>
+              <div class="product-footer">
+                <a href="#" target="_blank" class="project-link-btn">View Repository ↗</a>
+              </div>
+            </div>
+
+            <div class="card product-card shrink-card public-interactive">
+              <div class="product-header">
+                <span class="status-tag public">Forked Repo</span>
+                <span class="tech-badge python">Python</span>
+              </div>
+              <h3 class="product-title">Odoo-Tutorial-Demo</h3>
+              <p class="product-desc">Forked practice environment exploring enterprise Odoo ERP module customizations.</p>
+              <div class="product-footer">
+                <a href="#" target="_blank" class="project-link-btn">View Repository ↗</a>
+              </div>
+            </div>
+
+            <div class="card product-card shrink-card public-interactive">
+              <div class="product-header">
+                <span class="status-tag public">Public Repo</span>
+                <span class="tech-badge crypto">Blockchain</span>
+              </div>
+              <h3 class="product-title">Ethereum-Token</h3>
+              <p class="product-desc">Smart contract deployment module implementing customized asset issuance standards.</p>
+              <div class="product-footer">
+                <a href="#" target="_blank" class="project-link-btn">View Repository ↗</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-section-wrapper" style="margin-top: 40px;">
+        <div class="carousel-section-header">
+          <span class="carousel-section-name">🔒 Private Repositories</span>
+          <div class="carousel-controls">
+            <button class="ctrl-btn prev" onclick="scrollCarousel('private-track', -1)">‹</button>
+            <button class="ctrl-btn next" onclick="scrollCarousel('private-track', 1)">›</button>
+          </div>
+        </div>
+        
+        <div class="carousel-track-container">
+          <div id="private-track" class="carousel-track">
+            
+            <div class="card product-card shrink-card">
+              <div class="product-header">
+                <span class="status-tag private">Private Repo</span>
+                <span class="tech-badge vue">Vue</span>
+              </div>
+              <h3 class="product-title">vue3</h3>
+              <p class="product-desc">Advanced enterprise frontend scaffold optimized for scalable single-page applications.</p>
+              <div class="product-footer"><span class="inventory">Internal Framework</span></div>
+            </div>
+
+            <div class="card product-card shrink-card">
+              <div class="product-header">
+                <span class="status-tag private">Private Repo</span>
+                <span class="tech-badge css">CSS</span>
+              </div>
+              <h3 class="product-title">Drone.Management</h3>
+              <p class="product-desc">Autonomous drone fleet orchestration platform featuring real-time telemetry streaming.</p>
+              <div class="product-footer"><span class="inventory">Fleet Control R&D</span></div>
+            </div>
+
+            <div class="card product-card shrink-card">
+              <div class="product-header">
+                <span class="status-tag private">Private Repo</span>
+                <span class="tech-badge html">HTML</span>
+              </div>
+              <h3 class="product-title">APPRI</h3>
+              <p class="product-desc">Custom web application interface tailor-made for automated reporting metrics aggregation.</p>
+              <div class="product-footer"><span class="inventory">Internal Dashboard</span></div>
+            </div>
+
+            <div class="card product-card shrink-card">
+              <div class="product-header">
+                <span class="status-tag private">Private Repo</span>
+                <span class="tech-badge cpp">C++</span>
+              </div>
+              <h3 class="product-title">BreatheIN</h3>
+              <p class="product-desc">High-performance embedded core firmware optimized for digital health signal filtering.</p>
+              <div class="product-footer"><span class="inventory">Bio-Signal Firmware</span></div>
+            </div>
+
+            <div class="card product-card shrink-card">
+              <div class="product-header">
+                <span class="status-tag private">Private Repo</span>
+                <span class="tech-badge dart">Dart</span>
+              </div>
+              <h3 class="product-title">Flutter_Blue</h3>
+              <p class="product-desc">Custom cross-platform Bluetooth Low Energy wrapper engineered for stable connections.</p>
+              <div class="product-footer"><span class="inventory">BLE Comm Suite</span></div>
+            </div>
+
+            <div class="card product-card shrink-card">
+              <div class="product-header">
+                <span class="status-tag private">Private Repo</span>
+                <span class="tech-badge dart">Dart</span>
+              </div>
+              <h3 class="product-title">Flutter_Bluetooth_Serial</h3>
+              <p class="product-desc">Serial communication extension for classic Bluetooth continuous hardware logging.</p>
+              <div class="product-footer"><span class="inventory">Hardware Diagnostic</span></div>
+            </div>
+
+            <div class="card product-card shrink-card">
+              <div class="product-header">
+                <span class="status-tag private">Private Repo</span>
+                <span class="tech-badge csharp">C#</span>
+              </div>
+              <h3 class="product-title">BoardGame</h3>
+              <p class="product-desc">Object-oriented modular simulation engine built to model state machines and rules.</p>
+              <div class="product-footer"><span class="inventory">State-Machine Sandbox</span></div>
+            </div>
+
+            <div class="card product-card shrink-card">
+              <div class="product-header">
+                <span class="status-tag private">Private Repo</span>
+                <span class="tech-badge java">Java</span>
+              </div>
+              <h3 class="product-title">Take_Out_Sell</h3>
+              <p class="product-desc">Backend infrastructure demonstration featuring transaction routing and relational data.</p>
+              <div class="product-footer"><span class="inventory">E-Commerce Service</span></div>
+            </div>
+
+            <div class="card product-card shrink-card">
+              <div class="product-header">
+                <span class="status-tag private">Private Repo</span>
+                <span class="tech-badge python">Python</span>
+              </div>
+              <h3 class="product-title">Master-s-degree</h3>
+              <p class="product-desc">Academic core repository consolidating statistical models and image segmentation.</p>
+              <div class="product-footer"><span class="inventory">Research Sandbox</span></div>
+            </div>
+
+            <div class="card product-card shrink-card">
+              <div class="product-header">
+                <span class="status-tag private">Private Repo</span>
+                <span class="tech-badge css">CSS</span>
+              </div>
+              <h3 class="product-title">Javier</h3>
+              <p class="product-desc">Personal layout configuration archive and UX aesthetic component prototyping space.</p>
+              <div class="product-footer"><span class="inventory">Design Playground</span></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="sec-title">Experience</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="card tl-card">
+            <div class="tl-meta">
+              <span class="role">Engineer — AI CAD Tool</span>
+              <span class="date">2021 – Present</span>
+            </div>
+            <p class="company">Qualcomm · Hsinchu, Taiwan</p>
+            <p>Architected Multi-Agent AI debug platform using MCP to unify EDA logs & waveform data. Built autonomous Tcl translation sequence tools with self-correction mechanisms.</p>
+            <details class="preview-details">
+              <summary>System Architecture Grid</summary>
+              <div class="zoom-gallery">
+                <img src="jpg/LLM_system_overall.jpg" alt="System Architecture Overview" />
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="card tl-card">
+            <div class="tl-meta">
+              <span class="role">APR Opt Engine Engineer</span>
+              <span class="date">2020 – 2021</span>
+            </div>
+            <p class="company">Cadence · Hsinchu, Taiwan</p>
+            <p>Executed advanced node N4 P&R flows. Fine-tuned optimization engine pipelines, reducing turnaround time by 63% without regressions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2 class="sec-title">Education</h2>
+      <div class="edu-grid">
+        <div class="card edu-card">
+          <div class="tl-meta">
+            <span class="role">M.S. in CSIE</span>
+            <!-- <span class="date">2017 – 2020</span> -->
+          </div>
+          <p class="company">National Taiwan University</p>
+          <p >GPA 3.87</p>
+          <p>
+          	<a href="https://www.airitilibrary.com/Article/Detail/U0001-1209201810215800" 
+			   target="_blank" 
+			   class="journal-link">
+			   Journal INSPEC Accession Number: 19313037
+			</a>
+          </p>
+        </div>
+
+        <div class="card edu-card">
+          <div class="tl-meta">
+            <span class="role">BEng in Mechatronic & EE</span>
+            <span class="date">2013 – 2017</span>
+          </div>
+          <p class="company">National Taiwan Normal University</p>
+          <p>Rank 1/59 | 6x Presidential Award</p>
+          <details class="preview-details">
+            <summary>Transcripts & Presentation</summary>
+            <div class="zoom-gallery">
+              <img src="jpg/NTU_Official_Transcript.jpg" alt="NTU Official Transcript" />
+              <img src="jpg/2019_IEEE_SMC_Presentation_edited.jpg" alt="IEEE SMC Presentation Italy" />
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards">
+      <h2 class="sec-title">Awards & Bento Lookbook</h2>
+      <div class="awards-bento">
+        <div class="card award-block featured">
+          <h3>NTU Outstanding Student Award</h3>
+          <p class="meta">2019 | Only 13 recipients university-wide</p>
+          <div class="zoom-gallery">
+            <img src="avif/NTU_outstanding_youth_award_medal.avif" alt="NTU Medal" />
+          </div>
+        </div>
+        <div class="card award-block">
+          <h3>IEEE VTS Best Paper</h3>
+          <p class="meta">International · 2023</p>
+          <div class="zoom-gallery">
+            <img src="jpg/2024_VTS_Best_paper_award.jpg" alt="IEEE VTS Award" />
+          </div>
+        </div>
+        <div class="card award-block">
+          <h3>Microsoft Imagine Cup</h3>
+          <p class="meta">National 2nd Place · 2018</p>
+        </div>
+        <div class="card award-block">
+          <h3>NTU Altruistic Award</h3>
+          <p class="meta">Community Contribution</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2 class="sec-title">Publications</h2>
+      <div class="pub-grid">
+        <div class="card pub-card premium">
+          <span class="tag">Nature Citation</span>
+          <h3><a href="#">Deep Learning-based Microscopy Segmentation</a></h3>
+          <p class="authors">Shuo-Wen Chang (First Author)</p>
+          <p class="venue">IEEE SMC · 2019</p>
+        </div>
+        <div class="card pub-card">
+          <span class="tag">Best Paper</span>
+          <h3><a href="#">IEEE VLSI Test Symposium Best Paper</a></h3>
+          <p class="venue">VTS · 2023</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Javier Chang. Engineered with Javier Design Language.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
