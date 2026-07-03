@@ -6,6 +6,18 @@
   --card-bg: rgba(255, 255, 255, 0.85);
   --border: rgba(0, 0, 0, 0.08);
   --radius: 24px;
+  --journal-color: #a2dcfc; /* 天空淺藍 (淡) */
+  --thesis-color: #ffd6a5;  /* 柔和橘 (淡) */
+  --conf-color: #d8b4fe;    /* 柔和紫 (淡) */
+  
+  /* 為了搭配淺色背景，標籤文字建議改用深色 */
+  --tag-text: #1d1d1f;
+  --journal-green: #34c759;   /* Apple 綠：高質感 */
+  --thesis-orange: #ff9f0a;   /* 柔和橘 */
+  --conf-purple: #af52de;     /* 柔和紫 */
+  
+  --tag-text-light: #ffffff;  /* 綠色標籤配白字較清晰 */
+  --tag-text-dark: #1d1d1f;   /* 其他標籤配黑字 */
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -290,7 +302,6 @@ section { margin-bottom: 60px; scroll-margin-top: 110px; }
 .award-block.featured { grid-column: span 2; display: flex; flex-direction: column; justify-content: space-between; }
 
 .pub-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
-.pub-card .tag { background: #e8e8ed; color: var(--text); font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; display: inline-block; margin-bottom: 10px; }
 .pub-card.premium .tag { background: #00875a; color: white; }
 .pub-card h3 a { color: var(--text); text-decoration: none; }
 .pub-card h3 a:hover { color: var(--primary); }
@@ -301,7 +312,7 @@ section { margin-bottom: 60px; scroll-margin-top: 110px; }
 .lightbox img { max-width: 85%; max-height: 75vh; border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); transform: scale(0.95); transition: transform 0.3s ease; }
 .lightbox.active img { transform: scale(1); }
 
-.btn-top { position: fixed; bottom: 30px; right: 30px; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--border); background: white; cursor: pointer; box-shadow: 0 6px 16px rgba(0,0,0,0.06); opacity: 0; transition: 0.3s; z-index: 90; font-size: 1.2rem; }
+.btn-top { position: fixed; bottom: 30px; right: 30px; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--border); background: #64d2ff; cursor: pointer; box-shadow: 0 6px 16px rgba(0,0,0,0.06); opacity: 0; transition: 0.3s; z-index: 90; font-size: 1.2rem; }
 .btn-top.show { opacity: 1; }
 footer { text-align: center; padding: 60px 20px; color: var(--sub); font-size: 0.9rem; border-top: 1px solid var(--border); margin-top: 80px; }
 
@@ -315,6 +326,57 @@ footer { text-align: center; padding: 60px 20px; color: var(--sub); font-size: 0
 .summary-link:hover {
   opacity: 0.7;         /* 滑鼠懸停時微淡，增加互動回饋 */
   text-decoration: underline; /* 懸停時出現底線，引導點擊 */
+}
+
+.pub-card .tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-bottom: 12px;
+  transition: all 0.2s ease;
+}
+
+/* 顏色設定：期刊用綠色，其餘用淺色搭配 */
+.journal-tag { 
+  background-color: var(--journal-green) !important; 
+  color: var(--tag-text-light) !important; 
+}
+
+.thesis-tag { 
+  background-color: #ffd6a5 !important; 
+  color: var(--tag-text-dark) !important; 
+}
+
+.conf-tag { 
+  background-color: #d8b4fe !important; 
+  color: var(--tag-text-dark) !important; 
+}
+
+/* 嚴格限制：僅針對 .pub-grid 內部的標題連結 */
+.pub-grid h3 a {
+  color: var(--primary); /* 將標題文字直接改為藍色 */
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--primary); /* 加上藍色底線 */
+  padding-bottom: 1px;
+  transition: all 0.3s ease;
+}
+
+/* 滑鼠懸停時的微互動：加深底線 */
+.pub-grid h3 a:hover {
+  border-bottom-width: 2.5px; /* 滑鼠懸停時底線變粗，提供明確回饋 */
+  opacity: 0.8;
+}
+
+/* 針對 Experience 區塊內的描述段落進行間距調整 */
+.tl-card p:not(.company) + p {
+  margin-top: 8px; /* 您可以將 20px 調整為您覺得最舒適的距離 */
+}
+
+/* 確保公司名稱 (company) 下方也有足夠空間 */
+.tl-card .company {
+  margin-bottom: 12px;
 }
 
 /* 手機響應式降級排版 */
