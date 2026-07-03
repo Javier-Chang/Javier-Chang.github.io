@@ -367,6 +367,7 @@ footer { text-align: center; padding: 60px 20px; color: var(--sub); font-size: 0
 .pub-grid h3 a:hover {
   border-bottom-width: 2.5px; /* 滑鼠懸停時底線變粗，提供明確回饋 */
   opacity: 0.8;
+  
 }
 
 /* 針對 Experience 區塊內的描述段落進行間距調整 */
