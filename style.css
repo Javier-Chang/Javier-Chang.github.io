@@ -274,7 +274,7 @@ section { margin-bottom: 60px; scroll-margin-top: 110px; }
 .tl-meta { display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 8px; }
 .company { color: var(--primary); font-weight: 600; margin-bottom: 12px; }
 .journal-link {
-  display: inline-block;        /* 讓連結變成區塊，才能設定 margin */
+  display: inline;        /* 讓連結變成區塊，才能設定 margin */
   margin-top: 12px;             /* 創造與上一行文字的距離 */
   color: var(--primary);
   font-weight: 600;
